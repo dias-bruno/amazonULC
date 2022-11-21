@@ -13,9 +13,23 @@ knitr::opts_chunk$set(
 )
 ```
 
-# amazonULC
+# amazonULC <a href="https://github.com/dias-bruno/amazonULC"><img src="man/figures/logo.png" align="right" height="200" /></a>
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+
+[![GitHub Stars](https://img.shields.io/github/stars/dias-bruno/amazonULC?style=social)](https://github.com/dias-bruno/amazonULC/stargazers)
+
+![GitHub search hit counter: R](https://img.shields.io/github/search/dias-bruno/amazonULC/R)  
+![GitHub search hit counter: spatial](https://img.shields.io/github/search/dias-bruno/amazonULC/spatial)
+![GitHub search hit counter: interaction](https://img.shields.io/github/search/dias-bruno/amazonULC/interaction)
+![GitHub search hit counter: gravity](https://img.shields.io/github/search/dias-bruno/amazonULC/gravity)
+![GitHub search hit counter: workshop](https://img.shields.io/github/search/dias-bruno/amazonULC/workshop)  
+
+![GitHub issues](https://img.shields.io/github/issues/dias-bruno/amazonULC)
+![GitHub release](https://img.shields.io/github/release-date/dias-bruno/amazonULC)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/dias-bruno/amazonULC)
+![GitHub last commit](https://img.shields.io/github/last-commit/dias-bruno/amazonULC)
 <!-- badges: end -->
 
 The goal of amazonULC is to ...
