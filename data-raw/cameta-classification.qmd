@@ -4,7 +4,7 @@ author: "BDS and AP"
 format: html
 jupyter: python3
 execute: 
-  freeze: true
+  cache: true
 ---
 
 ## Quarto
@@ -51,7 +51,8 @@ target
 ```
 
 Copying the 'index' and 'TARGET' information from the original base to a new GeoDataFrame:
-```{python}geom = obj[[indice,'geometry']]
+```{python}
+geom = obj[[indice,'geometry']]
 geom
 ```
 
@@ -237,7 +238,7 @@ Saving a shapefile with the treated data:
 ```{python}
 geom = geom.merge(saida[aux], left_on=indice, right_on=indice)
 geom
-geom.to_file("E:\\00_INPE\\0_DISSERTACAO\\VALIDACAO\\COBERTURA\\segmentos_cobertura_tratados.shp")
+geom.to_file("data-outputs\\segmentos_cobertura_tratados.shp")
 ```
 
 Supervision Classification of the land cover
@@ -372,6 +373,6 @@ geom.explore(column="CLASSIFICACAO", tooltip="CLASSIFICACAO",tiles="CartoDB posi
 
 Exporting the shapefile with classification:
 ```{python}
-geom.to_file("E:\\00_INPE\\0_DISSERTACAO\\VALIDACAO\\COBERTURA\\cobertura_cameta_classificado.shp")
+geom.to_file("data-outputs\\cobertura_cameta_classificado.shp")
 ```
 

@@ -1,0 +1,36 @@
+---
+title: "cameta-make-data"
+author: "AP & BDS"
+format: html
+---
+
+## Quarto
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(here)
+library(sf)
+library(usethis)
+```
+
+```{r}
+cameta_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/cobertura_cameta_classificado.shp"))
+```
+
+```{r}
+cameta_class <- cameta_class |>
+  mutate(CLASSIFICA = factor(CLASSIFICA))
+```
+
+```{r}
+ggplot(data = cameta_class, aes(fill = CLASSIFICA)) + 
+  geom_sf()
+```
+
+
+```{r}
+usethis::use_data(cameta_class,
+                  overwrite = TRUE)
+```
+
