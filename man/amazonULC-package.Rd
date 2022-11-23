@@ -6,6 +6,8 @@
 \alias{amazonULC-package}
 \title{amazonULC: A Data Package with Urban Land Cover Classifications for a Selection of Cities in the Brazilian Amazon}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 What the package does (one paragraph).
 }
 \references{
