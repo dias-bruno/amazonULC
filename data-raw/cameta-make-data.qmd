@@ -4,8 +4,11 @@ author: "AP & BDS"
 format: html
 ---
 
-## Quarto
+In this notebook we save the data in R native format after processing using notebook `cameta-classification.qmd`
 
+## Preliminaries
+
+Load packages:
 ```{r}
 library(dplyr)
 library(ggplot2)
@@ -14,21 +17,24 @@ library(sf)
 library(usethis)
 ```
 
+Read processed data:
 ```{r}
 cameta_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/cobertura_cameta_classificado.shp"))
 ```
 
+Convert classification to factor:
 ```{r}
 cameta_class <- cameta_class |>
   mutate(CLASSIFICA = factor(CLASSIFICA))
 ```
 
+Plot:
 ```{r}
 ggplot(data = cameta_class, aes(fill = CLASSIFICA)) + 
   geom_sf()
 ```
 
-
+Save data:
 ```{r}
 usethis::use_data(cameta_class,
                   overwrite = TRUE)
