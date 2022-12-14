@@ -4,7 +4,11 @@ author: "AP & BDS"
 format: html
 ---
 
-In this notebook we save the data in R native format after processing using notebook `land-cover-classification.qmd`
+In this notebook we save the data in R native format after processing using notebook `land-cover-classification.qmd`.
+
+::: {.callout-warning}
+Before running this notebook, remember to update the name of the files to read and save in chunks `read-data` and `save-data`.
+:::
 
 ## Preliminaries
 
@@ -14,12 +18,13 @@ library(dplyr)
 library(ggplot2)
 library(here)
 library(sf)
+library(terra)
 library(usethis)
 ```
 
 Read processed data:
-```{r}
-land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/cameta_land_cover.shp"))
+```{r read-data}
+land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/maraba_land_cover.shp"))
 ```
 
 Convert classification to factor:
@@ -29,14 +34,15 @@ land_cover_class <- land_cover_class |>
 ```
 
 Plot:
-```{r}
+```{r eval=FALSE}
 ggplot(data = land_cover_class, aes(fill = CLASS)) + 
   geom_sf()
 ```
 
 Save data:
-```{r}
-usethis::use_data(land_cover_class,
+```{r save-data}
+maraba_class <- land_cover_class
+usethis::use_data(maraba_class,
                   overwrite = TRUE)
 ```
 

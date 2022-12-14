@@ -32,7 +32,5 @@ Authors:
 
 
 Bruno Dos Santos, INPE \email{bruno.santos@inpe.br}
-
-Antonio Paez, School of Earth, Environment and Society, McMaster University \email{paezha@mcmaster.ca}
 }
 \keyword{internal}

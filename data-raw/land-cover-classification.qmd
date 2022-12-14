@@ -29,7 +29,7 @@ from sklearn.metrics import f1_score, accuracy_score,ConfusionMatrixDisplay,clas
 
 Reading the segments with features and creating a GeoDataFrame. We generate the segments after a segmentation of the WPM image (CBERS-4A), using the meanshift algorithm. The segments have variables with spectral and textural information extracted from a WPM image from the CBERS-4A satellite, as well as geometric information (such as m² area and perimeter):
 ```{python}
-obj = gpd.read_file("raw-images\\nivel1_santarem.shp")
+obj = gpd.read_file("raw-images\\nivel1_maraba.shp")
 obj
 ```
 Defining the identifier variable of each segment:
@@ -246,7 +246,7 @@ Saving a shapefile with the treated data:
 ```{python}
 geom = geom.merge(saida[aux], left_on=indice, right_on=indice)
 geom
-geom.to_file("data-outputs\\santarem_segments_treated.shp")
+geom.to_file("data-outputs\\maraba_segments_treated.shp")
 ```
 
 ##Supervision Classification of the land cover
@@ -339,9 +339,9 @@ df = pd.DataFrame(data, columns = ['Reference','Predicted'])
 mc = pd.crosstab(df['Reference'], df['Predicted'], rownames=['Reference'], colnames=['Predicted'])
 plt.figure(figsize=(10,10))
 sns.heatmap(mc, annot=True,fmt='g',  cmap = 'YlGnBu',linewidths=.5)
-plt.title('Matriz de Confusão', fontweight='bold', fontsize=14)
-plt.xlabel('Classificação', fontsize=12)
-plt.ylabel('Referência',fontsize=12)
+plt.title('Confusion matrix', fontweight='bold', fontsize=14)
+plt.xlabel('Classification', fontsize=12)
+plt.ylabel('Reference',fontsize=12)
 plt.show()
 classe = []
 Accuracy = []
@@ -386,5 +386,5 @@ geom.explore(column="CLASS", tooltip="CLASS",tiles="CartoDB positron",
 
 Exporting the shapefile with classification:
 ```{python}
-geom.to_file("data-outputs\\santarem_land_cover.shp")
+geom.to_file("data-outputs\\maraba_land_cover.shp")
 ```

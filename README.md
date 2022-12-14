@@ -32,7 +32,7 @@ activity](https://img.shields.io/github/commit-activity/y/dias-bruno/amazonULC)
 commit](https://img.shields.io/github/last-commit/dias-bruno/amazonULC)
 <!-- badges: end -->
 
-The goal of amazonULC is to …
+The goal of amazonULC is to X…
 
 ## Installation
 
