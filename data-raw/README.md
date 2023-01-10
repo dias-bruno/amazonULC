@@ -12,10 +12,11 @@ These images are saved in folder raw-images. The naming convention is nivel1_cit
 -.cpg (codepage for identifying the character set to be used)
 
 There must be a shapefile for each of the following cities:
+- Belem Metropolitan Area
 - Altamira
-- Cameta
-- Maraba
-- Santarem
+- Cametá
+- Marabá
+- Santarém
 
 To process the data, the following notebooks need to be run:
 

@@ -18,7 +18,6 @@ library(dplyr)
 library(ggplot2)
 library(here)
 library(sf)
-library(terra)
 library(usethis)
 ```
 
@@ -42,6 +41,7 @@ ggplot(data = land_cover_class, aes(fill = CLASS)) +
 Save data:
 ```{r save-data}
 maraba_class <- land_cover_class
+  
 usethis::use_data(maraba_class,
                   overwrite = TRUE)
 ```

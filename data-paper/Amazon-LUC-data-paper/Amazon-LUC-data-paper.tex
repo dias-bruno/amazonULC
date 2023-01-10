@@ -1,0 +1,133 @@
+\documentclass[preprint, 3p,
+authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
+%%% Begin My package additions %%%%%%%%%%%%%%%%%%%
+
+\usepackage[hyphens]{url}
+
+  \journal{An awesome journal} % Sets Journal name
+
+\usepackage{lineno} % add
+
+\usepackage{graphicx}
+%%%%%%%%%%%%%%%% end my additions to header
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \usepackage{fontspec}
+  \ifxetex
+    \usepackage{xltxtra,xunicode}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use microtype if available
+\IfFileExists{microtype.sty}{\usepackage{microtype}}{}
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={Short Paper},
+            colorlinks=false,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+
+\setcounter{secnumdepth}{5}
+% Pandoc toggle for numbering sections (defaults to be off)
+
+
+% tightlist command for lists without linebreak
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
+
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+  \title{Short Paper}
+    \author[Some Institute of Technology]{Alice Anonymous%
+  \corref{cor1}%
+  \fnref{1}}
+   \ead{alice@example.com} 
+    \author[Another University]{Bob Security%
+  %
+  }
+   \ead{bob@example.com} 
+    \author[Another University]{Cat Memes%
+  %
+  \fnref{2}}
+   \ead{cat@example.com} 
+    \author[Some Institute of Technology]{Derek Zoolander%
+  %
+  \fnref{2}}
+   \ead{derek@example.com} 
+      \affiliation[Some Institute of Technology]{Department, Street,
+City, State, Zip}
+    \affiliation[Another University]{Department, Street, City, State,
+Zip}
+    \cortext[cor1]{Corresponding author}
+    \fntext[1]{This is the first author footnote.}
+    \fntext[2]{Another author footnote.}
+  
+  \begin{abstract}
+  The primary method for collecting information about the Earth's
+  surface in recent decades, notably for developing nations, has been
+  remote sensing. Despite this, Amazonian cities lack databases and
+  cartographic publications. Considering Santarém as the study site,
+  this paper proposes to create a classification model for mapping the
+  land cover of an Amazonian city. Using imagery from the CBERS-4A
+  satellite's WPM sensor, we created a classification model that
+  combines the Geographic Object-Based Image Analysis (GEOBIA) method,
+  data mining strategies, and the Random Forest machine learning
+  algorithm. The results are promising in discerning different
+  intra-urban cover classes, with an overall accuracy level in the
+  validation samples of over 98\%.
+  \end{abstract}
+    \begin{keyword}
+    keyword1 \sep 
+    keyword2
+  \end{keyword}
+  
+ \end{frontmatter}
+
+\hypertarget{bibliography-styles}{%
+\section{Bibliography styles}\label{bibliography-styles}}
+
+In recent decades, remote sensing has been the main basis for collecting
+data about the Earth's surface, especially for developing countries
+\citep{zhu2022urban}. The data obtained through remote sensing offers
+numerous opportunities for mapping and monitoring cities. They serve as
+the basis for physical, climatic, and socio-economic indicators, provide
+consistent quantitative data over time and space, and are an alternative
+to traditional surveys - such as those of the census. Once this data is
+translated into information and regularly updated, it can support urban
+planning {[}2{]}.
+
+\renewcommand\refname{References}
+\bibliography{references.bib}
+
+
+\end{document}
