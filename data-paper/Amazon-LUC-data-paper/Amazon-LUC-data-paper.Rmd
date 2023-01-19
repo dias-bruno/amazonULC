@@ -153,7 +153,7 @@ Therefore, we adopt the following values: spatial radius of 5 pixels, range radi
 We defined classes of objects by size and shape aiming to identify the land cover classes: "Shrub Vegetation" (SV), "Herbaceous Vegetation" (HV), "Water" (Wa), "Exposed Ground" (EG), "High Gloss Cover" (HG), "Ceramic Cover" (Ce), "Fiber Cement Cover" (FC), "Asphalt Road" (As), "Terrain Road" (Te), "Cloud" (Cl) and "Shadow" (Sh).
 
 After segmenting the WPM images, we extracted features for the geographic objects.
-We extracted spatial features and the mean, maximum, minimum, standard deviation, and range values of the biophysical index layers, GLCMs, multispectral, and fraction images. 
+We extracted spatial features and the mean, maximum, minimum, standard deviation, and range values of the biophysical index layers, GLCMs, multispectral, and fraction images.
 
 ## 2.4. Feature extraction
 
