@@ -100,13 +100,13 @@ For this work, we used:
 
 -   QGIS 3.18 [@QGISTeam2021]: for the thematic maps, image segmentation.
 
--   TerraView 5.6.3: for preprocessing the satellite images, with the GeoDMA 2.0.1 add-on [@Körting2013] for extracting attributes.
+-   TerraView 5.6.3: for preprocessing the satellite images, with the GeoDMA 2.0.1 add-on [@Korting2013] for extracting attributes.
 
 -   Python [@vanRossum1995] and R Languages [@R2022] : preparing and mining the data and classifying the geographic objects with the Random Forest algorithm.
 
 ## 2.1. Study areas
 
-Together, the study areas comprise about 1200 km² located above the municipal centers of Altamira, Cametá, Marabá, Santarém and part of the Metropolitan Area of Belém, as study areas (Figure \\ref{fig:location_map.png} ).
+Together, the study areas comprise about 1200 km² located above the municipal centers of Altamira (153 km²), Cametá (44 km²), Marabá (164 km²), Santarém (143 km²) and part of the Metropolitan Area of Belém (614 km²), as study areas (Figure \\ref{fig:location_map.png} ).
 All cities are located in the state of Pará, within the Brazilian Legal Amazon.
 The study site also covers areas classified as rural in the surroundings of the cities.
 For Altamira and Cametá, we used the delimitation of dos Santos et al. [@Santos2022].
@@ -178,7 +178,7 @@ We used a 5-fold cross-validation, an F1-Score performance indicator, and a maxi
 After the Random-search selecting the best hyperparameters for the RF model, we classified the entire database.
 
 | Hyperparameter                                   | Values                                                                                              |
-|-------------------------|----------------------------------------------|
+|--------------------------|----------------------------------------------|
 | Number of trees                                  | [1, 20, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 700, 800, 900, 1000, 1500, 2000] |
 | Criterion                                        | ['gini','entropy']                                                                                  |
 | Maximum depth                                    | [5, 10, 20, None]                                                                                   |
@@ -211,7 +211,7 @@ When evaluated using statistical assessment metrics, Santarém had the best clas
 Visually, it is noticeable that the result is satisfactory and in line with the evaluation metrics (Figure 2).
 We can explain the better performance of the classification model for Santarém because this study site had a more significant number of samples collected, facilitating the identification of the coverage classes by the algorithm.
 
-![MAPA - Substituir pela classificação com todas as cidades](images/Classifica%C3%A7%C3%A3o%20Cobertura%20(N%C3%ADvel%201).png)
+![Urban land cover classification maps of Altamira, Cametá, Belém Metropolitan Area, Marabá and Santarém.](images/ULC_Legend_v2-tile.jpg)
 
 In general, the Vegetation classes (Shrub and Herbaceous) and the Water class presented the highest F1-Score.
 It might be explained by the spectral nature of these classes, which are easily distinguished.

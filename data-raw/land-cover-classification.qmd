@@ -32,11 +32,20 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score, accuracy_score,ConfusionMatrixDisplay,classification_report,confusion_matrix
 ```
 
-Reading the segments with features and creating a GeoDataFrame. We generate the segments after a segmentation of the WPM image (CBERS-4A), using the meanshift algorithm. The segments have variables with spectral and textural information extracted from a WPM image from the CBERS-4A satellite, as well as geometric information (such as m² area and perimeter):
+Reading the segments and features and creating a DataFrame. We generate the segments after a segmentation of the WPM image (CBERS-4A), using the meanshift algorithm. The segments have variables with spectral and textural information extracted from a WPM image from the CBERS-4A satellite, as well as geometric information (such as m² area and perimeter):
 ```{python read-data}
-obj = gpd.read_file("raw-images\\nivel1_maraba.shp")
+features_path = "raw-images\\ULC_maraba_features.csv"
+shape_path = "raw-images\\ULC_maraba.shp"
+
+features = pd.read_csv(features_path)
+shape = gpd.read_file(shape_path)
+```
+
+```{python}
+obj = features.merge(shape, left_on='ID', right_on='ID')
 obj
 ```
+
 Inserting the name of the study area to save the classification files:
 ```{python read-data}
 study_area = 'cameta'
@@ -104,7 +113,7 @@ dummy = 0
 
 var_num.iloc[:,1:] = var_num.iloc[:,1:].fillna(dummy)
 
-var_num.iloc[:,1:] =(var_num.iloc[:,1:] - var_num.iloc[:,1:].min())/(var_num.iloc[:,1:].max() - var_num.iloc[:,1:].min())
+var_num.iloc[:,1:] = ((var_num.iloc[:,1:] - var_num.iloc[:,1:].min())/(var_num.iloc[:,1:].max() - var_num.iloc[:,1:].min())).round(5)
 var_num
 ```
 
@@ -118,7 +127,7 @@ try:
     
 except:
     obj = (aux.merge(var_num, left_on=indice, right_on=indice))
-    print("Não há variáveis categóricas para aplicar OneHotEncode")
+    print("No categorical features to apply OneHotEncode.")
 
 obj
 ```
@@ -221,10 +230,10 @@ for i, j in iv:
 
 for i in range(len(colunas)):
     for j in range(len(colunas)):
-        if j > i and abs(saida[colunas[i]].corr(saida[colunas[j]])) > factor:
+        if j > i and abs(obj[colunas[i]].corr(obj[colunas[j]])) > fator:
             if (colunas[j] in aux) and (colunas[j] != indice):
                 aux.remove(colunas[j])
-
+                
 aux = sorted(aux)
 aux.remove(indice)
 aux[:0] = [indice]
@@ -239,10 +248,13 @@ print(f'list of variables remaining after the variable selection process: {aux}'
 
 Visualizing the correlation between variables:
 ```{python}
-corr_df = saida[aux].corr()
+corr_df = obj[aux[1:]].corr()
 
 corr_df.style.background_gradient(cmap='Spectral')
-corr_df = saida[aux[1:]].corr(method='pearson')
+```
+
+```{python}
+corr_df = obj[aux[1:]].corr(method='pearson')
 
 plt.figure(figsize=(10, 10))
 sns.heatmap(corr_df, annot=False)
@@ -257,7 +269,7 @@ Saving a shapefile with the treated data:
 ```{python}
 geom = geom.merge(saida[aux], left_on=indice, right_on=indice)
 geom
-geom.to_file("data-outputs\\maraba_segments_treated.shp")
+geom.to_csv("data-outputs\\maraba_segments_treated.csv", index=False)
 ```
 
 ##Supervision Classification of the land cover
@@ -345,6 +357,11 @@ Viewing the Confusion matrix for the test data:
 ```{python}
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
+
+```
+
+Confusion matrix:
+```{python}
 data = {'Reference': y_test.flatten(), 'Predicted': y_pred}
 df = pd.DataFrame(data, columns = ['Reference','Predicted'])
 mc = pd.crosstab(df['Reference'], df['Predicted'], rownames=['Reference'], colnames=['Predicted'])
@@ -354,6 +371,9 @@ plt.title('Confusion matrix', fontweight='bold', fontsize=14)
 plt.xlabel('Classification', fontsize=12)
 plt.ylabel('Reference',fontsize=12)
 plt.show()
+```
+
+```{python}
 classe = []
 Accuracy = []
 Precision = []
@@ -386,6 +406,15 @@ pd.DataFrame(avaliacao)
 Inserting the classification ('CLASS') into the database shapefile:
 ```{python}
 geom['CLASS'] = modelo.predict(geom.iloc[:,2:-1])
+
+geom = gpd.GeoDataFrame(geom, geometry='geometry')
+
+colunas_geo = list(geom.columns)
+colunas_geo.remove('geometry')
+colunas_geo.append('geometry')
+
+colunas_geo
+geom = geom[colunas_geo]
 ```
 
 Viewing the Land cover classification map:

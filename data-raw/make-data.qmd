@@ -23,7 +23,7 @@ library(usethis)
 
 Read processed data:
 ```{r read-data}
-land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/maraba_land_cover.shp"))
+land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/ULC_belem_classified.shp"))
 ```
 
 Convert classification to factor:
@@ -40,9 +40,9 @@ ggplot(data = land_cover_class, aes(fill = CLASS)) +
 
 Save data:
 ```{r save-data}
-maraba_class <- land_cover_class
+belem_class <- land_cover_class
   
-usethis::use_data(maraba_class,
+usethis::use_data(belem_class,
                   overwrite = TRUE)
 ```
 

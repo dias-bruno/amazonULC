@@ -1,20 +1,20 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.12.14)  14 DEC 2022 10:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.19)  19 JAN 2023 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Amazon-LUC-data-paper.tex
 (./Amazon-LUC-data-paper.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2022-11-02> (./elsarticle.cls
+L3 programming layer <2023-01-16> (./elsarticle.cls
 Document Class: elsarticle 2020/11/20, 3.3: Elsevier Ltd
 (c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-11-02 L3 programming layer (loader) 
+Package: expl3 2023-01-16 L3 programming layer (loader) 
 (c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count185
 \l__pdf_internal_box=\box51
 )) (c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2022-06-22 L3 Experimental document command parser
+Package: xparse 2023-01-16 L3 Experimental document command parser
 ) (c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count186
@@ -74,7 +74,7 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \@enLab=\toks18
 \@sep=\skip50
 \@@sep=\skip51
-(c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+(./Amazon-LUC-data-paper.spl) (c:/Users/brdia/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
@@ -241,12 +241,12 @@ Type  H <return>  for immediate help.
 l.1560 }
          
 Here is how much of TeX's memory you used:
- 4234 strings out of 476928
- 62640 string characters out of 5823313
- 395366 words of memory out of 5000000
- 25484 multiletter control sequences out of 15000+600000
- 470022 words of font info for 29 fonts, out of 8000000 for 9000
+ 4233 strings out of 478051
+ 62545 string characters out of 5839265
+ 1849324 words of memory out of 5000000
+ 24360 multiletter control sequences out of 15000+600000
+ 513050 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,0n,76p,246b,40s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,0n,76p,246b,40s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
