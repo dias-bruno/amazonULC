@@ -56,15 +56,15 @@ pt <- st_intersection(pt,
 hp <- ggplot() +
   geom_sf(data = hx,
           color = NA,
-          fill = "#FF9966") +
+          fill = "#B5BA61") +
   geom_sf(data = pt,
           aes(size = exp(size),
               alpha = alpha),
           shape = 16,
-          color = "#FF691E") +
+          color = "#7C8D4C") +
   geom_sf(data = cc,
           color = NA,
-          fill = "#0089b9") +
+          fill = "#725428") +
   scale_size(range = c(0.001, 1)) +
   scale_alpha(range = c(0.1, 0.5)) +
   theme_void() +
@@ -76,18 +76,18 @@ hs <- sticker(hp,
               s_y = 1,
               s_width = 2.2,
               s_height = 2.2,
-              package = "gravity",
-              h_fill = "#FF9966",
-              h_color = "#0089b9",
-              p_size = 12,
+              package = "amazonULC",
+              h_fill = "#B5BA61",
+              h_color = "#725428",
+              p_size = 7,
               p_x = 1.00,
               p_y = 1.10,
               p_family = "Orbitron",
               p_fontface = "bold",
               p_color = "white",
               h_size = 2.3,
-              url = "paezha.github.io/gravityshop",
-              u_color = "#FF9966",
+              url = "dias-bruno.github.io/amazonULC",
+              u_color = "#B5BA61",
               u_family = "Orbitron",
               u_x = 0.94,
               u_y = 0.076,
