@@ -16,4 +16,4 @@ URL: https://github.com/dias-bruno/amazonULC,
 BugReports: https://github.com/dias-bruno/amazonULC/issues
 Depends: 
     R (>= 2.10)
-LazyData: true
+LazyData: false
