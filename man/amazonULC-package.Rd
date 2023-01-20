@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-What the package does (one paragraph).
+The amazonULC package aims to provide land cover classification maps of Brazilian Amazonian cities. Land cover maps can contribute to urban planning in Amazonian cities, with applications for monitoring urban sprawl, environmental protection areas, assisting in urban zoning, and identifying areas of high building density, among others. The amazonULC provides a urban land cover classification for the cities of Altamira, Cametá, Marabá, Santarém and part of the Metropolitan Area of Belém, all in the state of Pará, Brazilian Legal Amazon.
 }
 \references{
 \url{https://github.com/dias-bruno/amazonULC}
@@ -17,7 +17,6 @@ What the package does (one paragraph).
 Useful links:
 \itemize{
   \item \url{https://github.com/dias-bruno/amazonULC}
-  \item \url{https://dias-bruno.github.io/amazonULC/}
   \item Report bugs at \url{https://github.com/dias-bruno/amazonULC/issues}
 }
 

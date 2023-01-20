@@ -70,7 +70,8 @@ of Altamira:
 library(amazonULC)
 library(ggplot2)
 
-altamira <- amazonULC::altamira_class
+data(altamira_class)
+altamira <- altamira_class
 ggplot(data = altamira, aes(fill = CLASS)) + geom_sf()
 ```
 

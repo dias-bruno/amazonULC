@@ -94,7 +94,7 @@ The WPM image preprocessing comes second, followed by the segmentation, extracti
 The classification of the segments is the final process.
 For this work, we used the following data:
 
--   WPM images from the CBERS-4A satellite: two orthorectified images, one panchromatic and one multispectral, dated 09/11/2020. The WPM sensor provides panchromatic and multispectral images simultaneously. The panchromatic images have 2 meters of spatial resolution, with a spectral range between 0.45 and 0.90 µm. Multispectral images have a spatial resolution of 8 meters, with spectral bands: blue (blue, 0.45 - 0.52 μm), green (green, 0.52 - 0.59 μm), red (red, 0.63 - 0.69 μm), NIR (near infrared, 0.77 - 0.89 μm). The radiometric resolution of the images is 10 bits. The imaged swath width is 92 km and the revisit period is 31 days [@INPE2019];
+-   WPM images from the CBERS-4A satellite: two orthorectified images, one panchromatic and one multispectral, dated 09/11/2020. The WPM sensor provides panchromatic and multispectral images simultaneously. The panchromatic images have 2 meters of spatial resolution, with a spectral range between 0.45 and 0.90 \\mu m. Multispectral images have a spatial resolution of 8 meters, with spectral bands: blue (blue, 0.45 - 0.52 \\mu m), green (green, 0.52 - 0.59 \\mu m), red (red, 0.63 - 0.69 \\mu m), NIR (near infrared, 0.77 - 0.89 \\mu m). The radiometric resolution of the images is 10 bits. The imaged swath width is 92 km and the revisit period is 31 days [@INPE2019];
 
 For this work, we used:
 
@@ -109,9 +109,9 @@ For this work, we used:
 Together, the study areas comprise about 1200 km² located above the municipal centers of Altamira (153 km²), Cametá (44 km²), Marabá (164 km²), Santarém (143 km²) and part of the Metropolitan Area of Belém (614 km²), as study areas (Figure \\ref{fig:location_map.png} ).
 All cities are located in the state of Pará, within the Brazilian Legal Amazon.
 The study site also covers areas classified as rural in the surroundings of the cities.
-For Altamira and Cametá, we used the delimitation of dos Santos et al. [@Santos2022].
-For the other three study areas, we made the delimitation according to the methodology [@Gonçalves2021] - which uses night light images to identify potentially populated areas.
-According to the Fundação Amazônia de Amparo a Estudos e Pesquisas, it is estimated that the municipalities mentioned above have more than 3.5 million inhabitants, representing more than 38% of the population of the State of Pará.
+For Altamira and Cametá, we used the delimitation of dos Santos et al. [-@Santos2022].
+For the other three study areas, we made the delimitation according to the methodology [@Goncalves2021] - which uses night light images to identify potentially populated areas.
+According to the *Fundação Amazônia de Amparo a Estudos e Pesquisas*, it is estimated that the municipalities mentioned above have more than 3.5 million inhabitants, representing more than 38% of the population of the State of Pará.
 
 [![Location of the study areas.](images/location_map.png)](1)
 
@@ -159,7 +159,7 @@ We extracted spatial features and the mean, maximum, minimum, standard deviation
 
 We employed a stratified random sampling following the prevalent land cover classes.
 We set 70% of samples for training and the remaining 30% for validation.
-After sampling, the variables underwent a pre-classification treatment process, where potential null values were filled in.
+After sampling, the variables underwent a pre-classification treatment process, where potential `null` values were filled in.
 We next ordered the variables based on their ability to distinguish between different interest classes.
 We used the R² from the Analysis of Variance (ANOVA) for the ordering.
 Due to their poor ability to discriminate between classes, we eliminated the attributes with R² lower than 0.1.
@@ -178,7 +178,7 @@ We used a 5-fold cross-validation, an F1-Score performance indicator, and a maxi
 After the Random-search selecting the best hyperparameters for the RF model, we classified the entire database.
 
 | Hyperparameter                                   | Values                                                                                              |
-|--------------------------|----------------------------------------------|
+|--------------------------------------------------|-----------------------------------------------------------------------------------------------------|
 | Number of trees                                  | [1, 20, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 700, 800, 900, 1000, 1500, 2000] |
 | Criterion                                        | ['gini','entropy']                                                                                  |
 | Maximum depth                                    | [5, 10, 20, None]                                                                                   |
@@ -188,42 +188,63 @@ After the Random-search selecting the best hyperparameters for the RF model, we 
 
 : Hyperparameters tested in the RF model.
 
-# 3. RESULTS {.unnumbered}
+# 3. RESULTS
 
 We developed a land cover classification model for each city.
 The database contains the set of model hyperparameters that produced the best classification.
-The metrics F1-Score Macro (average of the F1-Score of the different classes), F1-Score Weighted (average of the F1-Score of the different classes weighted by the number of samples), and Overall Accuracy of the classification produced by the RF model over the validation samples are presented in Table 2 for each study area.
+The metrics F1-Score Macro (average of the F1-Score of the different classes), F1-Score Weighted (average of the F1-Score of the different classes weighted by the number of samples), and Global Accuracy of the classification produced by the RF model over the validation samples are presented in Table 2 for each study area.
 
-| Study area              | **F1-Score Macro** | **F1-Score Weighted** | **Overall Accuracy** |
-|-------------------|------------------|------------------|------------------|
-| Altamira                |                    |                       |                      |
-| Belém Metropolitan Area |                    |                       |                      |
-| Cametá                  |                    |                       |                      |
-| Marabá                  |                    |                       |                      |
-| Santarém                |                    |                       |                      |
+| Study area              | **F1-Score Macro** | **F1-Score Weighted** | **Global Accuracy** |
+|-------------------------|--------------------|-----------------------|---------------------|
+| Altamira                | 0.90               | 0.90                  | 0.90                |
+| Belém Metropolitan Area | 0.75               | 0.95                  | 0.95                |
+| Cametá                  | 0.85               | 0.85                  | 0.85                |
+| Marabá                  | 0.90               | 0.95                  | 0.95                |
+| Santarém                | 0.92               | 0.99                  | 0.99                |
 
 : Metrics for evaluating the land cover classifications for each study area.
 
-According to statistics, the developed models obtained Macro F1-Scores above X%, Weighted F1-Scores above X% and Global Accuracy above X%.
+According to statistics, the developed models obtained Macro F1-Scores above 75%, Weighted F1-Scores and Global Accuracy above 85%.
 These high rates show that the RF model's classification successfully classified most of the validation samples, demonstrating a good capacity for classifying data not used in the model's development.
+Visually, it is noticeable that the result is satisfactory and in line with the evaluation metrics (Figure 2).
+
+![Urban land cover classification maps of Altamira, Cametá, Belém Metropolitan Area, Marabá and Santarém.](images/ULC_Legend_v2-tile.jpg){width="4724"}
 
 When evaluated using statistical assessment metrics, Santarém had the best classification.
-Visually, it is noticeable that the result is satisfactory and in line with the evaluation metrics (Figure 2).
 We can explain the better performance of the classification model for Santarém because this study site had a more significant number of samples collected, facilitating the identification of the coverage classes by the algorithm.
-
-![Urban land cover classification maps of Altamira, Cametá, Belém Metropolitan Area, Marabá and Santarém.](images/ULC_Legend_v2-tile.jpg)
 
 In general, the Vegetation classes (Shrub and Herbaceous) and the Water class presented the highest F1-Score.
 It might be explained by the spectral nature of these classes, which are easily distinguished.
-On the other hand, the Fiber cement and Ceramic classes had the worst F1-Score - both present spectral characteristics similar to the Asphalt Road and Earth Road classes, respectively, which would justify the higher confusion on the part of the classifier algorithm [12].
+On the other hand, the Fiber cement and Ceramic classes had the worst F1-Score - both present spectral characteristics similar to the Asphalt Road and Earth Road classes, respectively, which would justify the higher confusion on the part of the classifier algorithm.
 
-# 4. CONCLUSION {.unnumbered}
+# 5. STUDY LIMITATIONS
+
+This work seeks to provide land cover bases for five locations in the Brazilian Legal Amazon.
+However, although it has met its objective, some limitations must be pointed out.
+
+The methodology we adopted for the satellite image classification was the GEOBIA approach.
+This technique requires a segmentation process over the image, grouping the pixels of similar spectral performance.
+However, we noticed that some targets were not completely separated during the segmentation process, compromising the classification result by the classifier algorithm.
+This segmentation error was more noticeable in the city of Marabá.
+Consequently, "not pure" segments were identified, i.e., segments that could be divided into two or more classes.
+It is essential to mention that this limitation is due to the research team's decision to use only algorithms available in open-access software.
+
+Another point to be raised is that even if the classification accuracy levels are considered satisfactory by the research team, it is still possible to find segments misclassified by the Random Forest algorithm.
+
+# 4. CONCLUSION
 
 This work aimed to provide land cover classification maps for Brazilian Amazonian cities.
 Land cover maps can contribute to urban planning in Amazonian cities, with applications for monitoring urban sprawl, building in environmental protection areas, assisting in urban zoning, and identifying areas of high building density, among others.
 Our classification model used images from the WPM sensor of the CBERS-4A satellite and combined the GEOBIA approach, data mining techniques and the Random Forest machine learning algorithm.
-The results obtained are promising regarding the ability to discriminate intra-urban cover classes, achieving an overall accuracy level above X% in the validation samples for all study areas.
+The results obtained are promising regarding the ability to discriminate intra-urban cover classes, achieving an overall accuracy level above 85% in the validation samples for all study areas.
 The integration between the GEOBIA approach and a machine learning algorithm was the reason for this success.
 In addition, this work also emphasizes the application of the CBERS-4A satellite, recently launched by the Brazilian government in partnership with the Chinese government, for Amazon urban studies.
 
-# References {.unnumbered}
+# Acknowledgments
+
+This research was funded by *"Conselho Nacional de Desenvolvimento Científico e Tecnológico"* (CNPq), grant number 131352/2021-0.
+This study was financed in part by the *"Coordenação de Aperfeiçoamento de Pessoal de Nível Superior--Brasil"* (CAPES) -- Finance Code 001 and with the support of Global Affairs Canada, through the Emerging Leaders in the Americas Program (ELAP).
+
+# References
+
+\\bibliography{references.bib}

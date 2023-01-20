@@ -6,13 +6,12 @@ Authors@R:
            comment = c(ORCID = "0000-0002-6748-2038")),
            person("Antonio", "Paez", , "paezha@mcmaster.ca", role = c("aut"),
            comment = c(ORCID = "0000-0001-6912-9919")))
-Description: What the package does (one paragraph).
+Description: The amazonULC package aims to provide land cover classification maps of Brazilian Amazonian cities. Land cover maps can contribute to urban planning in Amazonian cities, with applications for monitoring urban sprawl, environmental protection areas, assisting in urban zoning, and identifying areas of high building density, among others. The amazonULC provides a urban land cover classification for the cities of Altamira, Cametá, Marabá, Santarém and part of the Metropolitan Area of Belém, all in the state of Pará, Brazilian Legal Amazon.
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.2
-URL: https://github.com/dias-bruno/amazonULC,
-    https://dias-bruno.github.io/amazonULC/
+URL: https://github.com/dias-bruno/amazonULC
 BugReports: https://github.com/dias-bruno/amazonULC/issues
 Depends: 
     R (>= 2.10)

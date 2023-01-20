@@ -201,12 +201,14 @@ used the following data:
   panchromatic and one multispectral, dated 09/11/2020. The WPM sensor
   provides panchromatic and multispectral images simultaneously. The
   panchromatic images have 2 meters of spatial resolution, with a
-  spectral range between 0.45 and 0.90 µm. Multispectral images have a
-  spatial resolution of 8 meters, with spectral bands: blue (blue, 0.45
-  - 0.52 μm), green (green, 0.52 - 0.59 μm), red (red, 0.63 - 0.69 μm),
-  NIR (near infrared, 0.77 - 0.89 μm). The radiometric resolution of the
-  images is 10 bits. The imaged swath width is 92 km and the revisit
-  period is 31 days \citep{INPE2019};
+  spectral range between 0.45 and 0.90 \textbackslash mu m.
+  Multispectral images have a spatial resolution of 8 meters, with
+  spectral bands: blue (blue, 0.45 - 0.52 \textbackslash mu m), green
+  (green, 0.52 - 0.59 \textbackslash mu m), red (red, 0.63 - 0.69
+  \textbackslash mu m), NIR (near infrared, 0.77 - 0.89
+  \textbackslash mu m). The radiometric resolution of the images is 10
+  bits. The imaged swath width is 92 km and the revisit period is 31
+  days \citep{INPE2019};
 \end{itemize}
 
 For this work, we used:
@@ -217,7 +219,7 @@ For this work, we used:
   segmentation.
 \item
   TerraView 5.6.3: for preprocessing the satellite images, with the
-  GeoDMA 2.0.1 add-on \citep{Körting2013} for extracting attributes.
+  GeoDMA 2.0.1 add-on \citep{Korting2013} for extracting attributes.
 \item
   Python \citep{vanRossum1995} and R Languages \citep{R2022} : preparing
   and mining the data and classifying the geographic objects with the
@@ -228,19 +230,19 @@ For this work, we used:
 \subsection{2.1. Study areas}\label{study-areas}}
 
 Together, the study areas comprise about 1200 km² located above the
-municipal centers of Altamira, Cametá, Marabá, Santarém and part of the
-Metropolitan Area of Belém, as study areas (Figure
-\textbackslash ref\{fig:location\_map.png\} ). All cities are located in
-the state of Pará, within the Brazilian Legal Amazon. The study site
-also covers areas classified as rural in the surroundings of the cities.
-For Altamira and Cametá, we used the delimitation of dos Santos et al.
-\citep{Santos2022}. For the other three study areas, we made the
-delimitation according to the methodology \citep{Gonçalves2021} - which
-uses night light images to identify potentially populated areas.
-According to the Fundação Amazônia de Amparo a Estudos e Pesquisas, it
-is estimated that the municipalities mentioned above have more than 3.5
-million inhabitants, representing more than 38\% of the population of
-the State of Pará.
+municipal centers of Altamira (153 km²), Cametá (44 km²), Marabá (164
+km²), Santarém (143 km²) and part of the Metropolitan Area of Belém (614
+km²), as study areas (Figure \textbackslash ref\{fig:location\_map.png\}
+). All cities are located in the state of Pará, within the Brazilian
+Legal Amazon. The study site also covers areas classified as rural in
+the surroundings of the cities. For Altamira and Cametá, we used the
+delimitation of dos Santos et al. \citeyearpar{Santos2022}. For the
+other three study areas, we made the delimitation according to the
+methodology \citep{Goncalves2021} - which uses night light images to
+identify potentially populated areas. According to the \emph{Fundação
+Amazônia de Amparo a Estudos e Pesquisas}, it is estimated that the
+municipalities mentioned above have more than 3.5 million inhabitants,
+representing more than 38\% of the population of the State of Pará.
 
 \href{1}{\includegraphics{images/location_map.png}}
 
@@ -329,12 +331,12 @@ layers, GLCMs, multispectral, and fraction images.
 We employed a stratified random sampling following the prevalent land
 cover classes. We set 70\% of samples for training and the remaining
 30\% for validation. After sampling, the variables underwent a
-pre-classification treatment process, where potential null values were
-filled in. We next ordered the variables based on their ability to
-distinguish between different interest classes. We used the R² from the
-Analysis of Variance (ANOVA) for the ordering. Due to their poor ability
-to discriminate between classes, we eliminated the attributes with R²
-lower than 0.1.
+pre-classification treatment process, where potential \texttt{null}
+values were filled in. We next ordered the variables based on their
+ability to distinguish between different interest classes. We used the
+R² from the Analysis of Variance (ANOVA) for the ordering. Due to their
+poor ability to discriminate between classes, we eliminated the
+attributes with R² lower than 0.1.
 
 \hypertarget{classification-model}{%
 \subsection{2.4. Classification Model}\label{classification-model}}
@@ -359,8 +361,8 @@ After the Random-search selecting the best hyperparameters for the RF
 model, we classified the entire database.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3521}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6479}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3611}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6389}}@{}}
 \caption{Hyperparameters tested in the RF model.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -389,14 +391,13 @@ Boostrap & {[}`True', `False'{]} \\
 \end{longtable}
 
 \hypertarget{results}{%
-\section*{3. RESULTS}\label{results}}
-\addcontentsline{toc}{section}{3. RESULTS}
+\section{3. RESULTS}\label{results}}
 
 We developed a land cover classification model for each city. The
 database contains the set of model hyperparameters that produced the
 best classification. The metrics F1-Score Macro (average of the F1-Score
 of the different classes), F1-Score Weighted (average of the F1-Score of
-the different classes weighted by the number of samples), and Overall
+the different classes weighted by the number of samples), and Global
 Accuracy of the classification produced by the RF model over the
 validation samples are presented in Table 2 for each study area.
 
@@ -415,7 +416,7 @@ Study area
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{F1-Score Weighted}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Overall Accuracy}
+\textbf{Global Accuracy}
 \end{minipage} \\
 \midrule()
 \endfirsthead
@@ -427,37 +428,31 @@ Study area
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{F1-Score Weighted}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\textbf{Overall Accuracy}
+\textbf{Global Accuracy}
 \end{minipage} \\
 \midrule()
 \endhead
-Altamira & & & \\
-Belém Metropolitan Area & & & \\
-Cametá & & & \\
-Marabá & & & \\
-Santarém & & & \\
+Altamira & 0.90 & 0.90 & 0.90 \\
+Belém Metropolitan Area & 0.75 & 0.95 & 0.95 \\
+Cametá & 0.85 & 0.85 & 0.85 \\
+Marabá & 0.90 & 0.95 & 0.95 \\
+Santarém & 0.92 & 0.99 & 0.99 \\
 \bottomrule()
 \end{longtable}
 
 According to statistics, the developed models obtained Macro F1-Scores
-above X\%, Weighted F1-Scores above X\% and Global Accuracy above X\%.
-These high rates show that the RF model's classification successfully
+above 75\%, Weighted F1-Scores and Global Accuracy above 85\%. These
+high rates show that the RF model's classification successfully
 classified most of the validation samples, demonstrating a good capacity
-for classifying data not used in the model's development.
+for classifying data not used in the model's development. Visually, it
+is noticeable that the result is satisfactory and in line with the
+evaluation metrics (Figure 2).
 
 When evaluated using statistical assessment metrics, Santarém had the
-best classification. Visually, it is noticeable that the result is
-satisfactory and in line with the evaluation metrics (Figure 2). We can
-explain the better performance of the classification model for Santarém
-because this study site had a more significant number of samples
-collected, facilitating the identification of the coverage classes by
-the algorithm.
-
-\begin{figure}
-\centering
-\includegraphics{images/Classificação Cobertura (Nível 1).png}
-\caption{MAPA - Substituir pela classificação com todas as cidades}
-\end{figure}
+best classification. We can explain the better performance of the
+classification model for Santarém because this study site had a more
+significant number of samples collected, facilitating the identification
+of the coverage classes by the algorithm.
 
 In general, the Vegetation classes (Shrub and Herbaceous) and the Water
 class presented the highest F1-Score. It might be explained by the
@@ -465,11 +460,32 @@ spectral nature of these classes, which are easily distinguished. On the
 other hand, the Fiber cement and Ceramic classes had the worst F1-Score
 - both present spectral characteristics similar to the Asphalt Road and
 Earth Road classes, respectively, which would justify the higher
-confusion on the part of the classifier algorithm {[}12{]}.
+confusion on the part of the classifier algorithm.
+
+\hypertarget{study-limitations}{%
+\section{5. STUDY LIMITATIONS}\label{study-limitations}}
+
+This work seeks to provide land cover bases for five locations in the
+Brazilian Legal Amazon. However, although it has met its objective, some
+limitations must be pointed out.
+
+The methodology we adopted for the satellite image classification was
+the GEOBIA approach. This technique requires a segmentation process over
+the image, grouping the pixels of similar spectral performance. However,
+we noticed that some targets were not completely separated during the
+segmentation process, compromising the classification result by the
+classifier algorithm. This segmentation error was more noticeable in the
+city of Marabá. Consequently, ``not pure'' segments were identified,
+i.e., segments that could be divided into two or more classes. It is
+essential to mention that this limitation is due to the research team's
+decision to use only algorithms available in open-access software.
+
+Another point to be raised is that even if the classification accuracy
+levels are considered satisfactory by the research team, it is still
+possible to find segments misclassified by the Random Forest algorithm.
 
 \hypertarget{conclusion}{%
-\section*{4. CONCLUSION}\label{conclusion}}
-\addcontentsline{toc}{section}{4. CONCLUSION}
+\section{4. CONCLUSION}\label{conclusion}}
 
 This work aimed to provide land cover classification maps for Brazilian
 Amazonian cities. Land cover maps can contribute to urban planning in
@@ -480,14 +496,28 @@ classification model used images from the WPM sensor of the CBERS-4A
 satellite and combined the GEOBIA approach, data mining techniques and
 the Random Forest machine learning algorithm. The results obtained are
 promising regarding the ability to discriminate intra-urban cover
-classes, achieving an overall accuracy level above X\% in the validation
-samples for all study areas. The integration between the GEOBIA approach
-and a machine learning algorithm was the reason for this success. In
-addition, this work also emphasizes the application of the CBERS-4A
-satellite, recently launched by the Brazilian government in partnership
-with the Chinese government, for Amazon urban studies.
+classes, achieving an overall accuracy level above 85\% in the
+validation samples for all study areas. The integration between the
+GEOBIA approach and a machine learning algorithm was the reason for this
+success. In addition, this work also emphasizes the application of the
+CBERS-4A satellite, recently launched by the Brazilian government in
+partnership with the Chinese government, for Amazon urban studies.
 
-\renewcommand\refname{References}
+\hypertarget{acknowledgments}{%
+\section{Acknowledgments}\label{acknowledgments}}
+
+This research was funded by \emph{``Conselho Nacional de Desenvolvimento
+Científico e Tecnológico''} (CNPq), grant number 131352/2021-0. This
+study was financed in part by the \emph{``Coordenação de Aperfeiçoamento
+de Pessoal de Nível Superior--Brasil''} (CAPES) -- Finance Code 001 and
+with the support of Global Affairs Canada, through the Emerging Leaders
+in the Americas Program (ELAP).
+
+\hypertarget{references}{%
+\section{References}\label{references}}
+
+\textbackslash bibliography\{references.bib\}
+
 \bibliography{references.bib}
 
 

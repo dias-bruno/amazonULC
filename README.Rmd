@@ -48,28 +48,16 @@ commit](https://img.shields.io/github/last-commit/dias-bruno/amazonULC)
 
 <!-- badges: end -->
 
-The `amazonULC` package aims to provide land cover classification maps
-of Brazilian Amazonian cities. Land cover maps can contribute to urban
-planning in Amazonian cities, with applications for monitoring urban
-sprawl, environmental protection areas, assisting in urban zoning, and
-identifying areas of high building density, among others. The
-`amazonULC` provides a urban land cover classification for the cities of
-Altamira, Cametá, Marabá, Santarém and part of the Metropolitan Area of
-Belém, all in the state of Pará, Brazilian Legal Amazon.
+The `amazonULC` package aims to provide land cover classification maps of Brazilian Amazonian cities. Land cover maps can contribute to urban planning in Amazonian cities, with applications for monitoring urban sprawl, environmental protection areas, assisting in urban zoning, and identifying areas of high building density, among others. The `amazonULC` provides a urban land cover classification for the cities of Altamira, Cametá, Marabá, Santarém and part of the Metropolitan Area of Belém, all in the state of Pará, Brazilian Legal Amazon.
 
 ![Location map of the cities analyzed by the
 amazonULC.](images/location_map.png)
 
-The maps have the following land cover classes: "Shrub Vegetation" (VA),
-"Herbaceous Vegetation" (VH), "Water" (AG), "Exposed Ground" (SE), "High
-Gloss Cover" (BR), "Ceramic Cover" (TC), "Fiber Cement Cover" (TF),
-"Asphalt Road" (AS), "Terrain Road" (ES), "Cloud" (NU) and "Shadow"
-(SO).
+The maps have the following land cover classes: "Shrub Vegetation" (VA), "Herbaceous Vegetation" (VH), "Water" (AG), "Exposed Ground" (SE), "High Gloss Cover" (BR), "Ceramic Cover" (TC), "Fiber Cement Cover" (TF), "Asphalt Road" (AS), "Terrain Road" (ES), "Cloud" (NU) and "Shadow" (SO).
 
 ## Installation
 
-You can install the development version of amazonULC from
-[GitHub](https://github.com/) with:
+You can install the development version of amazonULC from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -78,11 +66,13 @@ devtools::install_github("dias-bruno/amazonULC")
 
 ## Example
 
-This is a basic example that shows you how to plot the map of the city
-of Santarém:
+This is a basic example that shows you how to plot the map of the city of Altamira:
 
 ```{r example}
 library(amazonULC)
-ggplot(data = land_cover_class, aes(fill = CLASS)) + 
-  geom_sf()
+library(ggplot2)
+
+data(altamira_class)
+altamira <- altamira_class
+ggplot(data = altamira, aes(fill = CLASS)) + geom_sf()
 ```
