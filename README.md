@@ -45,11 +45,11 @@ Belém, all in the state of Pará, Brazilian Legal Amazon.
 ![Location map of the cities analyzed by the
 amazonULC.](images/location_map.png)
 
-The maps have the following land cover classes: “Shrub Vegetation” (VA),
-“Herbaceous Vegetation” (VH), “Water” (AG), “Exposed Ground” (SE), “High
-Gloss Cover” (BR), “Ceramic Cover” (TC), “Fiber Cement Cover” (TF),
-“Asphalt Road” (AS), “Terrain Road” (ES), “Cloud” (NU) and “Shadow”
-(SO).
+The maps have the following land cover classes: “Shrub Vegetation” (SV),
+“Herbaceous Vegetation” (HV), “Water” (Wa), “Exposed Ground” (EG), “High
+Gloss Cover” (HG), “Ceramic Cover” (Ce), “Fiber Cement Cover” (FC),
+“Asphalt Road” (As), “Terrain Road” (Te), “Cloud” (Cl) and “Shadow”
+(Sh).
 
 ## Installation
 

@@ -33,7 +33,6 @@ authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\usepackage{graphicx}
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -44,7 +43,7 @@ authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={},
-            pdftitle={amazonULC':' A Data Package with Urban Land Cover Classifications for a Selection of Cities in the Brazilian Amazon},
+            pdftitle={amazonULC: A Data Package with Urban Land Cover Classifications for a Selection of Cities in the Brazilian Amazon},
             colorlinks=false,
             urlcolor=blue,
             linkcolor=magenta,
@@ -79,55 +78,55 @@ authoryear]{elsarticle} %review=doublespace preprint=single 5p=2 column
 
 \begin{frontmatter}
 
-  \title{amazonULC':' A Data Package with Urban Land Cover
-Classifications for a Selection of Cities in the Brazilian Amazon}
+  \title{amazonULC: A Data Package with Urban Land Cover Classifications
+for a Selection of Cities in the Brazilian Amazon}
     \author[National Institute for Space Research (INPE)]{Bruno Dias dos
 Santos%
   \corref{cor1}%
-  \fnref{1}}
+  }
    \ead{bruno.santos@inpe.br} 
     \author[Federal University of ABC (UFABC)]{Carolina Moutinho Duque
 de Pinho%
   %
-  \fnref{2}}
+  }
    \ead{carolina.pinho@ufabc.edu.br} 
-    \author[Another University]{Cat Memes%
+    \author[National Institute for Space Research (INPE)]{Silvana
+Amaral%
   %
-  \fnref{2}}
-   \ead{cat@example.com} 
-    \author[Some Institute of Technology]{Derek Zoolander%
+  }
+   \ead{silvana.amaral@inpe.br} 
+    \author[McMaster University]{Antonio Paez%
   %
-  \fnref{2}}
-   \ead{derek@example.com} 
-    \author[Some Institute of Technology]{Alice Anonymous%
-  \corref{cor1}%
-  \fnref{1}}
-   \ead{alice@example.com} 
-      \affiliation[National Institute for Space Research (INPE),]{Earth
-Observation and Geoinformatics Division, 1758 Avenida dos Astronautas,
-Jardim da Granja, São José dos Campos, São Paulo, Brazil, 12227-010}
+  }
+   \ead{paezha@mcmaster.ca} 
+      \affiliation[National Institute for Space Research (INPE)]{Earth
+Observation and Geoinformatics Division, National Institute for Space
+Research (INPE) - 1758 Avenida dos Astronautas, Jardim da Granja, Sao
+Jose dos Campos, Sao Paulo, Brazil, 12227-010}
     \affiliation[Federal University of ABC (UFABC)]{Center for
-Engineering, Modeling and Applied Social Sciences (CECS), 5001 Avenida
-dos Estados, Bangu, Santo André, São Paulo, Brazil, 09210-580}
-    \affiliation[McMaster University]{School of Earth, Environment \&
-Society, 1280 Main Street, West, Hamilton, Ontario, Canada, ON L8S4L8}
+Engineering, Modeling and Applied Social Sciences (CECS), Federal
+University of ABC (UFABC) - 5001 Avenida dos Estados, Bangu, Santo
+Andre, Sao Paulo, Brazil, 09210-580}
+    \affiliation[McMaster University]{School of Earth, Environment and
+Society, McMaster University - 1280 Main Street, West, Hamilton,
+Ontario, Canada, ON L8S4L8}
     \cortext[cor1]{Corresponding author}
-    \fntext[1]{This is the first author footnote.}
-    \fntext[2]{Another author footnote.}
   
   \begin{abstract}
-  The primary method for collecting information about the Earth's
-  surface in recent decades, notably for developing nations, has been
-  remote sensing. Despite this, Amazonian cities lack databases and
-  cartographic publications. Selecting a group of four cities and one
-  metropolitan area as study sites, this paper proposes to provide land
-  cover classification maps for Amazonian cities. Using imagery from the
-  CBERS-4A satellite's WPM sensor, we created a classification model
-  that combines the Geographic Object-Based Image Analysis method, data
-  mining strategies, and the Random Forest machine learning algorithm.
-  The results are promising in discerning different intra-urban cover
-  classes, with an overall accuracy level in the validation samples of
-  over X\%.
+  Remote sensing has for decades been a primary method for collecting
+  information about Earth's surface; in the case of developing nations,
+  remotely sensed data is an important resource. Despite this, cities in
+  the Amazonian region lack databases and cartographic publications. For
+  this data paper, we select a group of four cities and one metropolitan
+  region as study sites to provide land cover classification maps. Using
+  imagery from the CBERS-4A satellite's WPM sensor, we created a
+  classification model that combines the Geographic Object-Based Image
+  Analysis method, data mining strategies, and a random forest machine
+  learning algorithm. The results are valuable to discern different
+  intra-urban land cover classes, with an overall accuracy level in the
+  validation samples of over 85\%. An R package provide analysis-ready
+  data and documentation to support researchers who wish to avail
+  themselves of these resources.
   \end{abstract}
     \begin{keyword}
     Urban Land Cover \sep Amazon \sep Remote Sensing \sep Random
@@ -138,80 +137,88 @@ Forest \sep Data Mining \sep
  \end{frontmatter}
 
 \hypertarget{introduction}{%
-\section{1. INTRODUCTION}\label{introduction}}
+\section{INTRODUCTION}\label{introduction}}
 
 Remote sensing has been the primary method for collecting data about the
 Earth's surface in recent years, particularly for developing countries
-\citep{zhu2022urban}. Numerous opportunities exist to map and monitor
-cities using remote sensing data. They provide accurate quantitative
-data over time and space, operate as the basis for physical, climatic,
-and socioeconomic indicators, and provide an alternative to conventional
-surveys such as the census. In addition, this data can assist in urban
-planning once it is converted into information and is consistently
-updated \citep{Weng2018}.
+\citep{Zhu2022}. Numerous opportunities exist to map and monitor cities
+using remote sensing data which provide accurate quantitative data over
+time and space, and operate as the basis for physical, climatic, and
+socioeconomic indicators, sometimes as a complement or even as an
+alternative to conventional surveys such as the census. In addition,
+these data can assist in urban planning once they are converted into
+information and are consistently prepared and updated \citep{Weng2018}.
 
 Land use and land cover mapping are the most significant applications of
 remote sensing in urban studies in Brazilian cities \citep{Almeida2010}.
-Despite this, most methodological methods using geoprocessing and remote
-sensing tools to investigate Brazilian cities use Southeastern Brazil as
-a study site \citep{Santos2022}. Although there is a significant and
-rich local production about the Amazonian urban areas, public managers
-still need to include such studies in public policies. In addition,
-Amazonian cities lack databases and cartographic publications
-\citep{Cardoso2020}.
+Despite this, most methods that use geoprocessing and remote sensing
+tools to investigate Brazilian cities have concentrated on Southeastern
+Brazil \citep{Santos2022}. Although research about urban areas in the
+Amazonian region is not completely absent, public managers still need to
+include such studies in public policies. This is somewhat complicated by
+the lack of databases and cartographic publications specific to
+Amazonian cities \citep{Cardoso2020}.
 
-The Amazon region presents specific characteristics, such as the
-historical process of human occupation, the low socioeconomic
-indicators, the climatic and environmental characteristics of the
-region, the strongly present cultural issue and the land and
-environmental conflicts. In addition, the growth of small and
-medium-sized cities is a characteristic of the Amazon urbanization
-process, following the reorganization of the national urban network and
-a new territorial division of labour \citep{Trindade1998, Trindade2011}.
+The Amazon region presents some unique characteristics. They include the
+historical process of human occupation in a rain forest region, with
+distinctive climatic and environmental characteristics. This is paired
+with relatively low levels of socioeconomic development, a strong
+cultural influence from indigenous peoples, sometimes complicated by
+land and environmental conflict. In addition, the growth of small and
+medium-sized cities is a characteristic of the urbanization process in
+the Amazon, following the reorganization of the national urban network
+and a new territorial division of labour
+\citep{Trindade1998, Trindade2011}.
 
-In this context, this paper aims to provide land cover classification
-maps of Brazilian Amazonian cities. We selected the cities of Altamira,
-Cametá, Marabá, Santarém and part of the Metropolitan Area of Belém, as
-study areas. Using imagery from the CBERS-4A satellite's WPM sensor, we
-created a classification model that includes the Geographic Object-Based
-Image Analysis (GEOBIA) method, data mining strategies, and the random
-forest machine learning algorithm.
+In this context, the objective of this data paper is to present an Open
+Data Product (ODP) useful to support research and policy analysis in the
+cities of Altamira, Cametá, Marabá, Santarém and part of the
+Metropolitan Area of Belém. ODPs provide analysis-ready data often with
+a value-added component \citep[see][]{arribas2021open}. Presently, we
+obtain remotely sensed data from public sources; the value added comes
+from the development of an urban land cover classification system for
+the cities mentioned above. Using imagery from the CBERS-4A satellite's
+WPM sensor, we created a classification model that includes the
+Geographic Object-Based Image Analysis (GEOBIA) method, data mining
+strategies, and a random forest machine learning algorithm.
 
 This paper is an example of open and reproducible research that uses
-only open software for imagery processing analysis. We obtained all data
-from publicly available sources and organized in the form of the
-Amazon-ULC R data package. We provide an open data product
-\citep{arribas2021open}, along with the code necessary to reproduce,
-modify, and contribute to the analysis , following best practices in
-spatial data science \citep{brunsdon2021opening, DESJARDINS2022103091}.
+only open software and data sources for imagery processing analysis. We
+obtained all data from publicly available sources and organized in the
+form of the Amazon-ULC R data package. In addition to the Open Data
+Product, all the code necessary to reproduce, modify, and contribute to
+the analysis is also shared, in line with best practices in spatial data
+science \citep{brunsdon2021opening, DESJARDINS2022103091}.
 
 \hypertarget{materials-and-methods}{%
-\section{2. MATERIALS AND METHODS}\label{materials-and-methods}}
+\section{MATERIALS AND METHODS}\label{materials-and-methods}}
 
-We summarise our methodology in six main steps. The definition of the
-study area is the first step. The WPM image preprocessing comes second,
-followed by the segmentation, extraction, and selection features. The
-classification of the segments is the final process. For this work, we
-used the following data:
+We summarise our methodology in five main steps, as follows.
+
+The definition of the study area is the first step. The WPM image
+preprocessing comes second, followed by the segmentation, extraction,
+and selection features. The classification of the segments is the final
+process. These steps are described in more detail below.
+
+For this work, we used the following data:
 
 \begin{itemize}
 \tightlist
 \item
-  WPM images from the CBERS-4A satellite: two orthorectified images, one
-  panchromatic and one multispectral, dated 09/11/2020. The WPM sensor
+  WPM images from the CBERS-4A satellite: orthorectified images,
+  panchromatic and multispectral, from the year of 2020. The WPM sensor
   provides panchromatic and multispectral images simultaneously. The
   panchromatic images have 2 meters of spatial resolution, with a
-  spectral range between 0.45 and 0.90 \textbackslash mu m.
-  Multispectral images have a spatial resolution of 8 meters, with
-  spectral bands: blue (blue, 0.45 - 0.52 \textbackslash mu m), green
-  (green, 0.52 - 0.59 \textbackslash mu m), red (red, 0.63 - 0.69
-  \textbackslash mu m), NIR (near infrared, 0.77 - 0.89
-  \textbackslash mu m). The radiometric resolution of the images is 10
-  bits. The imaged swath width is 92 km and the revisit period is 31
-  days \citep{INPE2019};
+  spectral range between 0.45 and 0.90 \(\mu\) m. Multispectral images
+  have a spatial resolution of 8 meters, with spectral bands: blue
+  (blue, 0.45 - 0.52 \(\mu\) m), green (green, 0.52 - 0.59 \(\mu\) m),
+  red (red, 0.63 - 0.69 \(\mu\) m), NIR (near infrared, 0.77 - 0.89
+  \(\mu\) m). The radiometric resolution of the images is 10 bits. The
+  imaged swath width is 92 km and the revisit period is 31 days
+  \citep{INPE2019};
 \end{itemize}
 
-For this work, we used:
+The following software applications supported this research:
 
 \begin{itemize}
 \item
@@ -227,27 +234,30 @@ For this work, we used:
 \end{itemize}
 
 \hypertarget{study-areas}{%
-\subsection{2.1. Study areas}\label{study-areas}}
+\subsection{Study areas}\label{study-areas}}
 
-Together, the study areas comprise about 1200 km² located above the
-municipal centers of Altamira (153 km²), Cametá (44 km²), Marabá (164
-km²), Santarém (143 km²) and part of the Metropolitan Area of Belém (614
-km²), as study areas (Figure \textbackslash ref\{fig:location\_map.png\}
-). All cities are located in the state of Pará, within the Brazilian
-Legal Amazon. The study site also covers areas classified as rural in
-the surroundings of the cities. For Altamira and Cametá, we used the
-delimitation of dos Santos et al. \citeyearpar{Santos2022}. For the
-other three study areas, we made the delimitation according to the
-methodology \citep{Goncalves2021} - which uses night light images to
-identify potentially populated areas. According to the \emph{Fundação
-Amazônia de Amparo a Estudos e Pesquisas}, it is estimated that the
-municipalities mentioned above have more than 3.5 million inhabitants,
-representing more than 38\% of the population of the State of Pará.
+Together, the study areas comprise about 1200 \(km^2\) located above the
+municipal centers of Altamira (153 \(km^2\)), Cametá (44 \(km^2\)),
+Marabá (164 \(km^2\)), Santarém (143 \(km^2\)) and part of the
+Metropolitan Area of Belém (614 \(km^2\)), as study areas (Figure
+\ref{fig:study-area}). All cities are located in the state of Pará,
+within the Brazilian Legal Amazon. The study site also covers areas
+classified as rural in the surroundings of the cities. For Altamira and
+Cametá, we used the delimitation of dos Santos et al.
+\citeyearpar{Santos2022}. For the other three study areas, we made the
+delimitation according to the methodology of Gonçalvez et al.
+\citeyearpar{Goncalves2021} - which uses night light images to identify
+potentially populated areas. According to the \emph{Fundação Amazônia de
+Amparo a Estudos e Pesquisas}, it is estimated that the municipalities
+mentioned above have more than 3.5 million inhabitants, representing
+more than 38\% of the population of the State of Pará.
 
-\href{1}{\includegraphics{images/location_map.png}}
+\begin{figure}
+\includegraphics[width=.8\linewidth]{images/location_map} \caption{\label{fig:study-area}Location of the study areas.}\label{fig:fig-1}
+\end{figure}
 
 \hypertarget{pre-processing-image}{%
-\subsection{2.2. Pre-processing image}\label{pre-processing-image}}
+\subsection{Pre-processing image}\label{pre-processing-image}}
 
 We started the pre-processing stage by cutting the images with the study
 area polygons. Then, we fused the images with the Principal Components
@@ -291,14 +301,15 @@ highlighted features of the desired targets in a synthetic image format
 uses a linear relationship to symbolize the spectral mixture of each
 pixel target, and the spectral response is defined as a combination of
 each component of the mixture, obeying a proportion between the
-components whose summation equals \citep{Shimabukuro2019}. In this
-study, we chose the pure pixels that served as the input to the LSME
-model directly from the WPM multispectral images (with an 8-meter
+components whose summation equals \citep{Shimabukuro2019}.
+
+In this study, we chose the pure pixels that served as the input to the
+LSME model directly from the WPM multispectral images (with an 8-meter
 spatial resolution), adopting the classes of vegetation, soil, and
 water.
 
 \hypertarget{image-segmentation-and-feature-extraction}{%
-\subsection{2.3. Image segmentation and feature
+\subsection{Image segmentation and feature
 extraction}\label{image-segmentation-and-feature-extraction}}
 
 The fused WPM image was segmented using the Mean-shift algorithm.
@@ -326,7 +337,7 @@ minimum, standard deviation, and range values of the biophysical index
 layers, GLCMs, multispectral, and fraction images.
 
 \hypertarget{feature-extraction}{%
-\subsection{2.4. Feature extraction}\label{feature-extraction}}
+\subsection{Feature extraction}\label{feature-extraction}}
 
 We employed a stratified random sampling following the prevalent land
 cover classes. We set 70\% of samples for training and the remaining
@@ -334,25 +345,25 @@ cover classes. We set 70\% of samples for training and the remaining
 pre-classification treatment process, where potential \texttt{null}
 values were filled in. We next ordered the variables based on their
 ability to distinguish between different interest classes. We used the
-R² from the Analysis of Variance (ANOVA) for the ordering. Due to their
-poor ability to discriminate between classes, we eliminated the
-attributes with R² lower than 0.1.
+\(R^2\) from the Analysis of Variance (ANOVA) for the ordering. Due to
+their poor ability to discriminate between classes, we eliminated the
+attributes with \(R^2\) lower than 0.1.
 
 \hypertarget{classification-model}{%
-\subsection{2.4. Classification Model}\label{classification-model}}
+\subsection{Classification Model}\label{classification-model}}
 
-We develop a supervised classification model using the training base
-with the Random Forest (RF) algorithm for each city. We used the
+We developed a supervised classification model using the training base
+with the random forest (RF) algorithm for each city. We used the
 Randomized Search technique to define the RF model's hyperparameters. In
 this technique, we input the algorithm values of hyperparameters that
 will be randomly selected and combined, returning a combination that
 results in the best possible classification. The method selects the
 optimal set of hyperparameters using a performance metric and a fixed
 number of iterations. Randomized Search uses cross-validation, dividing
-the training base into k parts (folds), and the model is trained and
-evaluated k times. The algorithm chooses a component (fold) for each
+the training base into \(k\) parts (folds), and the model is trained and
+evaluated \(k\) times. The algorithm chooses a component (fold) for each
 iteration to use as an evaluation before training the model on the other
-k-1 parts.
+\(k-1\) parts.
 
 We examined the hyperparameter values listed in Table 1 using Randomized
 Search. We used a 5-fold cross-validation, an F1-Score performance
@@ -361,8 +372,8 @@ After the Random-search selecting the best hyperparameters for the RF
 model, we classified the entire database.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3611}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6389}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
 \caption{Hyperparameters tested in the RF model.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -391,7 +402,7 @@ Boostrap & {[}`True', `False'{]} \\
 \end{longtable}
 
 \hypertarget{results}{%
-\section{3. RESULTS}\label{results}}
+\section{RESULTS}\label{results}}
 
 We developed a land cover classification model for each city. The
 database contains the set of model hyperparameters that produced the
@@ -402,10 +413,10 @@ Accuracy of the classification produced by the RF model over the
 validation samples are presented in Table 2 for each study area.
 
 \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2603}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2466}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2466}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2466}}@{}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2703}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}@{}}
 \caption{Metrics for evaluating the land cover classifications for each
 study area.}\tabularnewline
 \toprule()
@@ -446,7 +457,11 @@ high rates show that the RF model's classification successfully
 classified most of the validation samples, demonstrating a good capacity
 for classifying data not used in the model's development. Visually, it
 is noticeable that the result is satisfactory and in line with the
-evaluation metrics (Figure 2).
+evaluation metrics (Figure \ref{fig:fig-land-cover-classes}).
+
+\begin{figure}
+\includegraphics[width=.8\linewidth]{images/ULC_Legend_v2-tile} \caption{\label{fig:fig-land-cover-classes}Urban land cover classification maps of Altamira, Cametá, Belém Metropolitan Area, Marabá and Santarém.}\label{fig:fig-2}
+\end{figure}
 
 When evaluated using statistical assessment metrics, Santarém had the
 best classification. We can explain the better performance of the
@@ -463,7 +478,7 @@ Earth Road classes, respectively, which would justify the higher
 confusion on the part of the classifier algorithm.
 
 \hypertarget{study-limitations}{%
-\section{5. STUDY LIMITATIONS}\label{study-limitations}}
+\section{STUDY LIMITATIONS}\label{study-limitations}}
 
 This work seeks to provide land cover bases for five locations in the
 Brazilian Legal Amazon. However, although it has met its objective, some
@@ -477,15 +492,15 @@ segmentation process, compromising the classification result by the
 classifier algorithm. This segmentation error was more noticeable in the
 city of Marabá. Consequently, ``not pure'' segments were identified,
 i.e., segments that could be divided into two or more classes. It is
-essential to mention that this limitation is due to the research team's
-decision to use only algorithms available in open-access software.
+essential to mention that this limitation is due to the our decision to
+use only algorithms available in open-access software.
 
 Another point to be raised is that even if the classification accuracy
 levels are considered satisfactory by the research team, it is still
 possible to find segments misclassified by the Random Forest algorithm.
 
 \hypertarget{conclusion}{%
-\section{4. CONCLUSION}\label{conclusion}}
+\section{CONCLUSION}\label{conclusion}}
 
 This work aimed to provide land cover classification maps for Brazilian
 Amazonian cities. Land cover maps can contribute to urban planning in
@@ -512,11 +527,6 @@ study was financed in part by the \emph{``Coordenação de Aperfeiçoamento
 de Pessoal de Nível Superior--Brasil''} (CAPES) -- Finance Code 001 and
 with the support of Global Affairs Canada, through the Emerging Leaders
 in the Americas Program (ELAP).
-
-\hypertarget{references}{%
-\section{References}\label{references}}
-
-\textbackslash bibliography\{references.bib\}
 
 \bibliography{references.bib}
 
