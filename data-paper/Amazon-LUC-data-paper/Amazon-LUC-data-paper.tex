@@ -124,7 +124,11 @@ Ontario, Canada, ON L8S4L8}
   Analysis method, data mining strategies, and a random forest machine
   learning algorithm. The results are valuable to discern different
   intra-urban land cover classes, with an overall accuracy level in the
+<<<<<<< HEAD
   validation samples of over 85\%. An R package provide analysis-ready
+=======
+  validation samples of over X\%. An R package provide analysis-ready
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
   data and documentation to support researchers who wish to avail
   themselves of these resources.
   \end{abstract}
@@ -141,6 +145,7 @@ Forest \sep Data Mining \sep
 
 Remote sensing has been the primary method for collecting data about the
 Earth's surface in recent years, particularly for developing countries
+<<<<<<< HEAD
 \citep{Zhu2022}. Numerous opportunities exist to map and monitor cities
 using remote sensing data which provide accurate quantitative data over
 time and space, and operate as the basis for physical, climatic, and
@@ -148,6 +153,16 @@ socioeconomic indicators, sometimes as a complement or even as an
 alternative to conventional surveys such as the census. In addition,
 these data can assist in urban planning once they are converted into
 information and are consistently prepared and updated \citep{Weng2018}.
+=======
+\citep{zhu2022urban}. Numerous opportunities exist to map and monitor
+cities using remote sensing data which provide accurate quantitative
+data over time and space, and operate as the basis for physical,
+climatic, and socioeconomic indicators, sometimes as a complement or
+even as an alternative to conventional surveys such as the census. In
+addition, these data can assist in urban planning once they are
+converted into information and are consistently prepared and updated
+\citep{Weng2018}.
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 
 Land use and land cover mapping are the most significant applications of
 remote sensing in urban studies in Brazilian cities \citep{Almeida2010}.
@@ -239,18 +254,31 @@ The following software applications supported this research:
 Together, the study areas comprise about 1200 \(km^2\) located above the
 municipal centers of Altamira (153 \(km^2\)), Cametá (44 \(km^2\)),
 Marabá (164 \(km^2\)), Santarém (143 \(km^2\)) and part of the
+<<<<<<< HEAD
 Metropolitan Area of Belém (614 \(km^2\)), as study areas (Figure
+=======
+Metropolitan Area of Belém (614 km²), as study areas (Figure
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 \ref{fig:study-area}). All cities are located in the state of Pará,
 within the Brazilian Legal Amazon. The study site also covers areas
 classified as rural in the surroundings of the cities. For Altamira and
 Cametá, we used the delimitation of dos Santos et al.
 \citeyearpar{Santos2022}. For the other three study areas, we made the
+<<<<<<< HEAD
 delimitation according to the methodology of Gonçalvez et al.
 \citeyearpar{Goncalves2021} - which uses night light images to identify
 potentially populated areas. According to the \emph{Fundação Amazônia de
 Amparo a Estudos e Pesquisas}, it is estimated that the municipalities
 mentioned above have more than 3.5 million inhabitants, representing
 more than 38\% of the population of the State of Pará.
+=======
+delimitation according to the methodology \citep{Goncalves2021} - which
+uses night light images to identify potentially populated areas.
+According to the \emph{Fundação Amazônia de Amparo a Estudos e
+Pesquisas}, it is estimated that the municipalities mentioned above have
+more than 3.5 million inhabitants, representing more than 38\% of the
+population of the State of Pará.
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 
 \begin{figure}
 \includegraphics[width=.8\linewidth]{images/location_map} \caption{\label{fig:study-area}Location of the study areas.}\label{fig:fig-1}
@@ -350,7 +378,11 @@ their poor ability to discriminate between classes, we eliminated the
 attributes with \(R^2\) lower than 0.1.
 
 \hypertarget{classification-model}{%
+<<<<<<< HEAD
 \subsection{Classification Model}\label{classification-model}}
+=======
+\subsection{2.5. Classification Model}\label{classification-model}}
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 
 We developed a supervised classification model using the training base
 with the random forest (RF) algorithm for each city. We used the
@@ -372,8 +404,13 @@ After the Random-search selecting the best hyperparameters for the RF
 model, we classified the entire database.
 
 \begin{longtable}[]{@{}
+<<<<<<< HEAD
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6667}}@{}}
+=======
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.3311}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.6689}}@{}}
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 \caption{Hyperparameters tested in the RF model.}\tabularnewline
 \toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
@@ -413,10 +450,17 @@ Accuracy of the classification produced by the RF model over the
 validation samples are presented in Table 2 for each study area.
 
 \begin{longtable}[]{@{}
+<<<<<<< HEAD
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2703}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2432}}@{}}
+=======
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2809}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2247}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2584}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2360}}@{}}
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 \caption{Metrics for evaluating the land cover classifications for each
 study area.}\tabularnewline
 \toprule()
@@ -478,7 +522,11 @@ Earth Road classes, respectively, which would justify the higher
 confusion on the part of the classifier algorithm.
 
 \hypertarget{study-limitations}{%
+<<<<<<< HEAD
 \section{STUDY LIMITATIONS}\label{study-limitations}}
+=======
+\section{4. STUDY LIMITATIONS}\label{study-limitations}}
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 
 This work seeks to provide land cover bases for five locations in the
 Brazilian Legal Amazon. However, although it has met its objective, some
@@ -500,7 +548,11 @@ levels are considered satisfactory by the research team, it is still
 possible to find segments misclassified by the Random Forest algorithm.
 
 \hypertarget{conclusion}{%
+<<<<<<< HEAD
 \section{CONCLUSION}\label{conclusion}}
+=======
+\section{5. CONCLUSION}\label{conclusion}}
+>>>>>>> f93ded9cbef48d852ced52f22b55ff5fbe2c86e8
 
 This work aimed to provide land cover classification maps for Brazilian
 Amazonian cities. Land cover maps can contribute to urban planning in
