@@ -6,13 +6,14 @@ format: html
 
 In this notebook we save the data in R native format after processing using notebook `land-cover-classification.qmd`.
 
-::: {.callout-warning}
+::: callout-warning
 Before running this notebook, remember to update the name of the files to read and save in chunks `read-data` and `save-data`.
 :::
 
 ## Preliminaries
 
 Load packages:
+
 ```{r}
 library(dplyr)
 library(ggplot2)
@@ -22,27 +23,30 @@ library(usethis)
 ```
 
 Read processed data:
+
 ```{r read-data}
-land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/ULC_belem_classified.shp"))
+land_cover_class <- st_read(paste0(here::here(), "/data-raw/data-outputs/ULC_altamira_classified.shp"))
 ```
 
 Convert classification to factor:
+
 ```{r}
 land_cover_class <- land_cover_class |>
   mutate(CLASS = factor(CLASS))
 ```
 
 Plot:
+
 ```{r eval=FALSE}
 ggplot(data = land_cover_class, aes(fill = CLASS)) + 
   geom_sf()
 ```
 
 Save data:
+
 ```{r save-data}
-belem_class <- land_cover_class
+altamira_class <- land_cover_class
   
-usethis::use_data(belem_class,
+usethis::use_data(altamira_class,
                   overwrite = TRUE)
 ```
-
