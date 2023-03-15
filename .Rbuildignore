@@ -10,4 +10,5 @@
 ^pkgdown$
 ^\.github$
 ^README\.Rmd$
-^/data-paper$
+^data-paper$
+^images$
