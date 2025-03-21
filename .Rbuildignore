@@ -4,10 +4,11 @@
 ^amazonULC\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
-^data-raw$
+^data-raw/raw-images$
+^data-raw/data-outputs$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
 ^\.github$
 ^README\.Rmd$
-^/data-paper$
+^data-paper$

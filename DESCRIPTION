@@ -1,6 +1,6 @@
 Package: amazonULC
 Title: A Data Package with Urban Land Cover Classifications for a Selection of Cities in the Brazilian Amazon 
-Version: 0.0.0.9000
+Version: 2.0
 Authors@R: 
     c(person("Bruno", "Dos Santos", , "bruno.santos@inpe.br", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-6748-2038")),
@@ -10,8 +10,8 @@ Description: The amazonULC package aims to provide land cover classification map
 License: CC BY 4.0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.2
-URL: https://github.com/dias-bruno/amazonULC
+RoxygenNote: 7.3.2
+URL: https://github.com/dias-bruno/amazonULC, https://dias-bruno.github.io/amazonULC/
 BugReports: https://github.com/dias-bruno/amazonULC/issues
 Depends: 
     R (>= 2.10)

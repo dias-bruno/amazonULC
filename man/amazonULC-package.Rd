@@ -22,14 +22,5 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Bruno Dos Santos \email{bruno.santos@inpe.br} (\href{https://orcid.org/0000-0002-6748-2038}{ORCID})
-
-Authors:
-\itemize{
-  \item Antonio Paez \email{paezha@mcmaster.ca} (\href{https://orcid.org/0000-0001-6912-9919}{ORCID})
-}
-
-
 Bruno Dos Santos, INPE \email{bruno.santos@inpe.br}
 }
-\keyword{internal}

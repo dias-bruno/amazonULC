@@ -1,17 +1,10 @@
-#' @keywords internal
-"_PACKAGE"
-
-## usethis namespace: start
-## usethis namespace: end
-NULL
-
 #' amazonULC: A Data Package with Urban Land Cover Classifications for a Selection of Cities in the Brazilian Amazon
 #'
 #' @docType package
 #' @name amazonULC-package
 #' @author Bruno Dos Santos, INPE \email{bruno.santos@@inpe.br}
 #' @references \url{https://github.com/dias-bruno/amazonULC}
-NULL
+"_PACKAGE"
 
 ##############################################
 ##                DATA SETS                 ##
@@ -99,6 +92,7 @@ NULL
 #' @examples
 #'  data(altamira_class)
 #'  class <- altamira_class$CLASS
+"altamira_class"
 
 ## Belém Urban Land Cover
 
@@ -169,6 +163,7 @@ NULL
 #' @examples
 #'  data(belem_class)
 #'  class <- belem_class$CLASS
+"belem_class"
 
 ## Cameta Urban Land Cover
 
@@ -230,7 +225,7 @@ NULL
 #' @examples
 #'  data(cameta_class)
 #'  class <- cameta_class$CLASS
-#'
+"cameta_class"
 
 ## Maraba Urban Land Cover
 
@@ -305,6 +300,7 @@ NULL
 #' @examples
 #'  data(maraba_class)
 #'  class <- maraba_class$CLASS
+"maraba_class"
 
 ## Santarem Urban Land Cover
 
@@ -365,4 +361,4 @@ NULL
 #' @examples
 #'  data(santarem_class)
 #'  class <- santarem_class$CLASS
-#'
+"santarem_class"
