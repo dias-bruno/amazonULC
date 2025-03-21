@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/404.html</loc>
-  </url>
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/index.html</loc>
-  </url>
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/reference/amazonULC-package.html</loc>
-  </url>
-  <url>
-    <loc>https://dias-bruno.github.io/amazonULC/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://dias-bruno.github.io/amazonULC/404.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/LICENSE.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/authors.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/index.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/altamira_class.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/amazonULC-package.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/belem_class.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/cameta_class.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/index.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/maraba_class.html</loc></url>
+<url><loc>https://dias-bruno.github.io/amazonULC/reference/santarem_class.html</loc></url>
 </urlset>
+
